@@ -1,3 +1,10 @@
+
+/**
+ * @description 判断浏览器是否为移动端方法
+ * @return 返回布尔值，true是移动端，false不是移动端
+ * @author huangh@chsi.com.cn
+ * @date 2016.07.12
+ */
 function wapFn() {
     var sUserAgent = navigator.userAgent.toLowerCase(),
         bIsIpad = sUserAgent.match(/ipad/i) == "ipad",
@@ -15,12 +22,32 @@ function wapFn() {
         return false;
     }
 }
-function addSheetFile(path){ 
-    var fileref  = document.createElement("link"); 
-	fileref.rel  = "stylesheet"; 
-	fileref.type = "text/css"; 
-	fileref.href = path; 
-	fileref.media= "screen"; 
+/**
+ * @desciption 添加文件方法
+ * @param path 文件类型，css和js
+ * @param path 文件路径
+ * @author huangh@chsi.com.cn
+ * @date 2016.07.12
+ */
+function addFile(type,path){ 
+    var addFile  = '';
+    switch(type){
+        case 'css':
+            addFile  = document.createElement("link"); 
+            addFile.rel  = "stylesheet"; 
+            addFile.type = "text/css"; 
+            addFile.href = path;
+            break;
+        case 'js':
+            addFile  = document.createElement("script"); 
+            addFile.type = "text/javascript"; 
+            addFile.src = path;
+            break;
+        default:
+            alert('没有添加合适的文件类型');
+            break;    
+    }
+    addFile.media= "screen"; 
 	var headobj  = document.getElementsByTagName('head')[0]; 
-    headobj.appendChild(fileref); 
+    headobj.appendChild(addFile); 
 } 
