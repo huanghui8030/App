@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-表单输入绑定</title>
+</head>
+<body>
+    <h1>1、单行文本</h1>
+    <div id='example-1'>
+        <input v-model="message" placeholder="请输入文字！">
+        <p>Message is: {{ message }}</p>
+    </div>
+    <h1>2、多行文本</h1>
+    <div  id='example-2'>
+        <span>Multiline message is:</span>
+        <p style="white-space: pre-line;">{{ message }}</p>
+        <br>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    </div>
+    <h1>3、复选框</h1>
+    <h2>单个复选框，绑定到布尔值：</h2>
+    <div  id='example-3'>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+    </div>
+    <h2>多个复选框，绑定到同一个数组：</h2>
+    <div id='example-4'>
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames">
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+      <label for="mike">Mike</label>
+      <br>
+      <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <h1>4、单选按钮</h1>
+    <div id="example-5">
+      <input type="radio" id="one" value="One" v-model="picked">
+      <label for="one">One</label>
+      <br>
+      <input type="radio" id="two" value="Two" v-model="picked">
+      <label for="two">Two</label>
+      <br>
+      <span>Picked: {{ picked }}</span>
+    </div>
+    <h1>5、选择框</h1>
+    <h2>5.1、单选时</h2>
+    <div id="example-6">
+      <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    <h2>5.2、多选时 (绑定到一个数组)：</h2>
+    <div id="example-7">
+      <select v-model="selected" multiple style="width: 50px;">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <br>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    <h3>5.3、用 v-for 渲染的动态选项：</h3>
+    <div id='example-8'>
+        <select v-model='selected'>
+            <option v-for='option in options' v-bind:value='option.value'>
+                 {{ option.text }}
+            </option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+//1、单行文本
+new Vue({
+  el: '#example-1',
+  data: {
+    message: ''
+  }
+})  
+
+//2、多行文本
+new Vue({
+  el: '#example-2',
+  data: {
+    message: ''
+  }
+}) 
+
+//3.1、单个复选框
+new Vue({
+  el: '#example-3',
+  data: {
+    checked: false
+  }
+}) 
+//3.2、多个复选框
+new Vue({
+  el: '#example-4',
+  data: {
+    checkedNames: []
+  }
+})
+
+//4、单选按钮
+new Vue({
+  el: '#example-5',
+  data: {
+    picked: ''
+  }
+})
+
+//5.1、选择框
+new Vue({
+  el: '#example-6',
+  data: {
+    selected: ''
+  }
+})
+//5.2、多选
+new Vue({
+  el: '#example-7',
+  data: {
+    selected: []
+  }
+})
+//5.3、通过v-for渲染
+new Vue({
+    el:'#example-8',
+    data:{
+        selected: 'A',
+        options: [
+          { text: 'One', value: 'A' },
+          { text: 'Two', value: 'B' },
+          { text: 'Three', value: 'C' }
+        ]
+    }
+});
+
+
+</script>
+</html>
