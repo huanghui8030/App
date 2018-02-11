@@ -16,11 +16,10 @@
 
 通过使用构造函数创建根Vue实例来引导每个Vue vm Vue：
 
-```
+```js
 var vm = new Vue（{
   // options
 }）
-
 ```
 
 当您实例化Vue实例时，您需要传入一个options对象，该对象可以包含数据，模板，要装载的元素，方法，生命周期回调等选项。完整的选项列表可以在API参考中找到。
@@ -28,21 +27,20 @@ var vm = new Vue（{
 
 该Vue构造可以扩展到创建可重用组件构造预先定义的选项：
 
-```
+```js
 var MyComponent = Vue.extend（{
   //扩展选项
 }）
 //所有实例的“MyComponent”都创建
 //预定义的扩展选项
 var myComponentInstance = new MyComponent（）
-
 ```
 
 ### 2、属性和方法
 
 每个Vue实例代理其data对象中找到的所有属性：
 
-```
+```js
 
 var data = { a：1 }
 var vm = new Vue（{
@@ -62,7 +60,7 @@ vm.a //  - > 3
 
 每个Vue实例在创建时都会经历一系列初始化步骤 - 例如，它需要设置数据观察，编译模板，将实例装载到DOM，以及在数据更改时更新DOM。一路上，它还将调用一些生命周期钩子，这使我们有机会执行自定义逻辑。例如，在created创建实例后调用钩子：
 
-```
+```js
 var vm = new Vue（{
   data：{
     a：1
@@ -87,3 +85,9 @@ Vue.js使用基于HTML的模板语法，允许您将渲染的DOM声明性地绑�
 
 
 
+
+
+## demo
+
+- demo1：简单示例、数据绑定、for循环、事件绑定、双向数据绑定等功能
+- demo2：vue-组件构建
