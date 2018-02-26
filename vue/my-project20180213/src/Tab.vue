@@ -64,7 +64,7 @@ export default{
     data: function(){
         return {
             title:'tab选项卡实例',
-           curId: 0 
+            curId: 0 
         }  
     },
     computed: {},

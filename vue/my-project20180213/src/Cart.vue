@@ -303,7 +303,7 @@
         data: function(){
             return {
                 title:'购物车功能',
-                 productList:[
+                productList:[
                     {
                         'pro_name': '【斯文】物品1',//产品名称
                         'pro_brand': 'skc',//品牌名称
