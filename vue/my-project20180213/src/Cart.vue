@@ -27,7 +27,7 @@
                         </td>
                         <td class="td-num">
                             <div class="product-num">
-                                <a href="javascript:;" class="num-reduce num-do fl" @click="item.pro_num--"><span></span></a>
+                                <a href="javascript:;" class="num-reduce num-do fl" @click="item.pro_num>0?item.pro_num--:0"><span></span></a>
                                 <input type="text" class="num-input" v-model="item.pro_num">
                                 <a href="javascript:;" class="num-add num-do fr" @click="item.pro_num++"><span></span></a>
                             </div>
