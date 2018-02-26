@@ -31,11 +31,10 @@ export default {
     toggleFinish:function(item){
         //console.log(item);
         item.flag = !item.flag;
-      },
+    },
     addItem: function(){
-      this.items.push( {label : this.newItem, flag : false});
+      this.items.push({label : this.newItem, flag : false});
       this.newItem='';
-
     }
   }
 }
