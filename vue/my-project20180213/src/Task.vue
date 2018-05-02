@@ -82,7 +82,7 @@
                     status:false
                 });
                 //添加后，清空addText
-                this.addText="";
+                this.addText = "";
             },
             chooseList(type){
                 //type=1时，选择所有目标

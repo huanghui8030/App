@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>vue-todoList</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id='root'>
+        <input type="text" v-model='msg'>
+        <button @click='btnClick'>确认</button>
+        <ul>
+            <li v-for='(item,index) in lists' :key='index'>{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                msg:'',
+                lists:[]
+            },
+            methods:{
+                btnClick: function(){
+                    this.lists.push(this.msg);
+                    this.msg = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
