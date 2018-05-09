@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>全国高校就业创业指导教师网</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://t1.chei.com.cn/common/ch/iconfont.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/zdjs.css">
+</head>
+
+<body>
+    <div class="zdjs-header-bg">
+        <div class="zdjs-content">
+            <h1>全国高校就业创业指导教师网</h1>
+            <div class="header-logo">
+                <a href="#">管理用户登录&ensp;> </a>
+            </div>
+        </div>
+    </div>
+    <div id="app">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1">首页</el-menu-item>
+          <el-menu-item index="2">就业创业培训</el-menu-item>
+          <el-menu-item index="3">工作动态</el-menu-item>
+          <el-menu-item index="4"><a href="#">证书查询</a></el-menu-item>
+        </el-menu>
+        <div class="line"></div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return { 
+                activeIndex: '1',
+                activeIndex2: '1' 
+            }
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

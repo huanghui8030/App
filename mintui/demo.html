@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="_ui/assets/css/common.css">
+    <script src="_ui/assets/js/vendors.js"></script>
+    <script src="_ui/assets/js/common.js"></script>
+    <style>
+        .menu-bar {
+            position: fixed;
+            top:50px;
+            background: #fff;
+            width: 90%;
+            border-radius: 8px;
+            padding: 10px;
+            -webkit-transform: translate(-50%, 0);
+                    transform: translate(-50%, 0);
+        }
+        .menu-bar h1 {
+            font-size: 20px;
+            color: #26a2ff;
+        }
+        .menu-bar p {
+            margin-bottom: 10px;
+        }
+        .menu-bar::before {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: solid transparent;
+            border-width: 10px;
+            border-bottom-color: #fff;
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id='root' v-cloak>{{msg}}
+        <mt-button @click.native="handleClick">按钮</mt-button>
+        <mt-popup
+          v-model="popupVisible"
+          position="top" class='menu-bar'>
+            <ul v-for="li in menubar">
+                <li><a href="{{li.hef}}" v-text="li.name"></a></li>
+            </ul>
+        </mt-popup>
+    </div>
+    <script>
+        new Vue({
+            el:'#root',
+            mixins: typeof mixin != 'undefined' ? [mixin] : {},
+            data: function() {
+                return {
+                    msg: '123',
+                    popupVisible : false,
+                    menubar:[
+                        { name:'首页',href:'/'},
+                        { name:'首页',href:'/'}
+                    ]
+                }
+            },
+            methods: {
+                handleClick: function() {
+                  this.popupVisible = true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

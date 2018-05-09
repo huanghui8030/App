@@ -2,8 +2,5 @@
 iview/node_modules/*
 */node_modules/*
 
-iview/node_modules/.npminstall/node_modules/babel-runtime
 
-iview/node_modules/.npminstall/node_modules/babel-runtime
-
-iview/node_modules/.npminstall/node_modules/babel-runtime
+mintui/_ui/node_modules/*
