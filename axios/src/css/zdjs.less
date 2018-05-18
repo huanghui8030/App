@@ -1,0 +1,262 @@
+/**指导教师网， 前台页面样式文件 20180316**/
+@import url('_base.less');
+
+@width1180: 1180px;
+@headerH:100px;
+@bannerH: 360px;
+@fff:#fff;
+@mainc:#003570;
+@borderc:#dbdbdb;
+@c6:#666;
+@c9:#999; 
+@bgcolor:#e5e9ef;
+
+@borderD : 1px solid #ddd;
+ 
+//公用方法
+body{
+    min-width: @width1180;
+    background:@bgcolor;
+}
+.width1180{
+    width:@width1180;
+    margin:0 auto;
+}
+.el-header{
+    padding:0;
+}
+//header
+.zdjs-header{
+    background: url(../images/header.png) no-repeat center center ;
+    height: @headerH;
+    .header-content{
+        .width1180
+    }
+    .logo-img{
+        background: url(../images/logo.png) no-repeat left center;
+        background-image: -webkit-image-set(url(../images/logo.png) 1x,url(../images/logo2x.png) 2x);
+        height: @headerH;
+        overflow: hidden;
+        .logo-a{display: block;width: 420px;height: 40px;margin-top:30px;}
+    }
+    .login-btn{
+        float: right;
+        background: url(../images/loginshape.png) no-repeat 0 0 ;
+        height: 37px;
+        width: 113px;
+        margin-top:30px;
+        padding:8px 0 0 15px;
+    }
+}
+//菜单栏
+.zdjs-nav{
+    background: #fff;
+    border-bottom: solid 1px #e6e6e6;
+    .el-menu{
+        .width1180;
+        border-bottom:0;
+        a{
+            display: block;
+            &:hover{text-decoration:none;};
+        }
+    }
+    .el-menu--horizontal>.el-menu-item{
+        margin:0 20px;
+        padding: 0;
+    }
+} 
+/*footer*/
+.zdjs-footer{
+    height: 90px;
+    font-size: 12px;
+    line-height: 30px;
+    padding: 30px 0; }
+//轮播图
+.el-carousel__container {
+    height: 360px;
+}
+.bar{
+    height:@bannerH;
+    width:100%;
+    display: block;
+}
+.zdjs-banner1{
+    background:url(../images/banner.png) no-repeat center center;   
+}
+.zdjs-banner2{
+    background:url(../images/banner2.png) no-repeat center center;
+}
+//首页块状
+.zdjs-blocks{
+    .width1180;
+    padding: 40px 0 40px;
+    .list1{background:url(../images/info.png) no-repeat 0 12px; };
+    .list2{background:url(../images/wifi.png) no-repeat 0 12px; };
+    .list3{background:url(../images/zs.png) no-repeat 0 0;min-height: 380px; position: relative;
+        .search-text{display:block; text-align: center; font-size: 24px;font-weight:700;color:@mainc;margin:288px auto 16px;}
+        .search-jt{display:block;height: 24px; background:url(../images/inquire.png) no-repeat center 0;}
+    }
+    .list{
+        padding: 0 32px 8px;overflow: hidden;
+        background-color: @fff;
+        h3{color:@mainc;font-size:16px;padding: 40px 0 28px 30px;}
+        .el-row{line-height:26px;padding:10px 0;  border-bottom: 1px solid @borderc;font-size: 16px;}
+        .el-col-7{color:@c6;text-align: right;}
+        .more{color:@mainc;font-size: 12px;line-height: 40px;}
+    }
+    .title{
+        position: relative;
+        font-size: 24px;
+        text-align: center;
+        color: @mainc;
+        word-wrap: break-word;
+    }
+}
+.index-list{
+    .el-col-9{
+        width: 422px;
+        margin-right: 32px;
+        background-color: @fff;
+    }
+    .el-col-6{
+        width: 272px;
+        background-color: @fff;
+    }
+}
+.zx_enter{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border: 1px solid #e5e9ef;
+    &:hover{
+        text-decoration:none;
+        box-shadow: 4px 6px 10px rgba(0,0,0,.2);
+        border: 1px solid #e4e4e4;
+    } 
+    a{
+        display:block;
+    }
+}
+/*就业创业列表页*/
+.jycy{
+    .list{margin-bottom: 40px;height:375px;
+        .el-col-17{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 80%;
+        }
+        .el-col-7{
+            width: 20%;
+        }
+    }
+    .list1{margin-bottom:0;height:1220px}
+    .list4{background:@fff url(../images/pxxm.png) no-repeat 0 12px; };
+    .list5{background:@fff url(../images/pxjd.png) no-repeat 0 12px; };
+    .list6{background:@fff url(../images/pxsz.png) no-repeat 0 12px;margin-bottom: 0}
+}
+/*工作动态*/
+.gzdt{
+    .list{padding: 0 64px 20px;min-height: 400px;
+        h3{padding-left:0; }
+        .el-col-17{
+            width: 90%;
+        }
+        .el-col-7{
+            width: 10%;
+        }
+    }
+    .nav{padding: 36px 0 8px;color:#667d9d;
+        a{color:#667d9d;
+            &:last-child{color:@mainc;};
+        }
+    }
+    .news_time{color:@c9;text-align:center;font-size: 12px;padding: 15px 0 24px;}
+    .article{
+        word-wrap: break-word;
+        p{
+            /*text-indent: 2em;*/
+            font-size: 16px; 
+            line-height: 1.8;
+            margin-bottom: 14px; 
+            word-wrap: break-word;
+        }
+        img{max-width:100%;}
+        table{
+            margin: 0;
+            border-collapse:collapse;
+            border-spacing: 0;
+            border-left:@borderD;
+            border-top:@borderD;
+            td{
+                border-right:@borderD;
+                border-bottom:@borderD;
+                line-height: 1.8;
+                padding: 6px 10px;
+                vertical-align: text-top;
+            }
+        }
+    }
+    .el-pagination{
+        margin-top:15px;
+        float:right;
+    }
+    &.PXJD{
+        .list2{
+           background-image:url(../images/pxjd.png); 
+        }
+    }
+    &.PXXM{
+        .list2{
+           background-image:url(../images/pxxm.png); 
+        }
+    }
+    &.PXSZ{
+        .list2{
+           background-image:url(../images/pxsz.png); 
+        }
+    }
+    &.PXTZ{
+        .list2{
+           background-image:url(../images/info.png); 
+        }
+    }
+    &.wzxq{
+        .list2{background-image: none; }
+    }
+}
+/*证书查询*/
+.s-page{
+    padding: 50px 0;
+    background:#fff url(../images/search.png) no-repeat 0 12px;
+    h2{margin-bottom: 24px; }
+    .s-from{width: 400px;margin:0 auto;
+        
+    }
+    .el-col-2{color:@c6;}
+    button{
+        width: 100%;
+    }
+    .el-col-offset-9{margin-left: 457px;}
+    &.s-result{
+        font-size: 16px;
+        .el-row{margin-bottom: 22px;} 
+        .btn{margin-top: 60px;}
+        button{
+            width: 100px;
+        }
+        .no-result{margin:70px 0 66px;}
+        .no-img{height: 140px; background:url(../images/no-result.png) no-repeat center 0; }
+        h3{font-size: 20px;color:@c6;margin:23px 0 18px;}
+        p{color:@c9;font-size:14px;line-height: 24px;text-indent: 0}
+    }
+}
+//ie9提示文字换行 
+.el-message{
+    .el-message__content{
+        display: inline-block;
+    }
+} 
+.codetip{    margin-top: 85px;
+    min-width: 300px;
+    margin-left: -100px;
+    padding: 4px 15px;}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+    <title>test</title>
+    <link href="http://t1.chei.com.cn/common/ch/iconfont.css" rel="stylesheet">
+    <link href="http://t2.chei.com.cn/ncss/js/css/common.css" rel="stylesheet">
+    <link href="http://t2.chei.com.cn/ncss/js/css/zdjs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <el-container>
+            <el-header th:insert="/common/header" height='160'></el-header>
+            <div :style="{minHeight:minH +'px'}">
+                <el-carousel :interval="5000" >
+                    <el-carousel-item>
+                      <a class="bar zdjs-banner1" href="#"></a>
+                    </el-carousel-item>
+                    <el-carousel-item>
+                      <a class="bar zdjs-banner2" href="#"></a>
+                    </el-carousel-item>
+                </el-carousel>
+                <div class="zdjs-blocks">
+                    <el-row  type="flex" justify="space-between" class="index-list" :style="{height:mHeight+ 'px'}">
+                        <el-col :span="9" :style="{height:mHeight + 'px'}"  >
+                            <div class="list list1" ref="list1" >
+                                <h3>培训通知</h3>
+                                <el-row v-for="item in pxLists" :item="item"  :key="item.id">
+                                    <el-col :span="17"><a :href="'/xxfb/detail?id=' + item.id"  target="_blank">{{item.title}}</a></el-col>
+                                    <el-col :span="7">{{item.fbsj}}</el-col>
+                                </el-row>
+                                <a href="/xxfb/pxtz" v-if="pxLists.length>0" target="_blank" class="more">查看更多 ></a>    
+                            </div>
+                        </el-col>
+                        <el-col :span="9" :style="{height:mHeight + 'px'}" >
+                            <div class="list list2" ref="list2" >
+                                <h3>工作动态</h3>
+                                <el-row v-for="item in tdLists" :key="item.id">
+                                    <el-col :span="17"><a :href="'/xxfb/detail?id=' + item.id"  target="_blank">{{item.title}}</a></el-col>
+                                    <el-col :span="7">{{item.fbsj}}</el-col>
+                                </el-row>
+                                <a href="/xxfb/gzdt" target="_blank" v-if="tdLists.length>0" class="more">查看更多 ></a>   
+                            </div>
+                        </el-col>
+                        <el-col :span="6" class="zx_enter" :style="{height:mHeight + 'px'}"  @click.native="enterZscx">
+                            <div class="list list3">
+                                <span class="search-text">证书查询</span>
+                                <span class="search-jt"></span>
+                            </div>
+                        </el-col>
+                    </el-row>
+                </div>
+            </div>
+            <el-footer class="zdjs-footer" th:insert="/common/footer" height='90'></el-footer>
+        </el-container>
+    </div>
+    <script src="http://t1.chei.com.cn/common/ch/browser/es5.min.js"></script>
+    <script src="http://t1.chei.com.cn/common/wap/js/wap.min.js"></script>
+    <script src="http://t2.chei.com.cn/ncss/js/js/vendors.js"></script>
+    <script src="http://t2.chei.com.cn/ncss/js/js/common.js"></script>
+    <script src="http://t1.chei.com.cn/common/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://t4.chei.com.cn/captcha/js/captcha.min.js?v=20180426"></script>
+    <script>
+    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    var mixin = {
+        data:function(){
+            return {
+                activeIndex: '1', //菜单选中
+                pxLists:[], //培训通知数据
+                tdLists:[], //工作动态数据
+                mHeight:'420'
+            }
+        },
+        mounted: function () {
+            this.execute("PXTZ");
+            this.execute("GZDT");
+        },
+        updated: function () {
+          this.$nextTick(function () {
+            var h1 = this.$refs.list1.offsetHeight,
+                h2 = this.$refs.list2.offsetHeight,
+                newH;
+                newH = h1>h2?h1:h2;
+                this.mHeight =  newH > 420 ? newH : 420;
+          })
+        },
+        methods:{
+            execute:function(lm){  //请求数据
+                var _this = this;
+                axios({
+                    method: 'post',
+                    url: 'http://js.ncss.org.cn/xxfb/query', 
+                    data: {
+                        'start':0,
+                        'xxlx':lm
+                    } 
+                }).then(function (res) {
+                    var data = res.data;
+                    _this.$nextTick().then(function () {
+                        if(lm == "GZDT"){
+                            _this.tdLists = data.list.slice(0,5);
+
+                        }else{
+                            _this.pxLists = data.list.slice(0,5);    
+                        }
+                    });
+                }).catch(function (res) {
+                    //异常错误
+                })
+            },  
+            enterZscx:function(){
+                window.location.href = '/zscx/index';
+            }
+        }
+    }
+    new Vue({
+        el: '#app',
+        mixins: typeof mixin != 'undefined' ? [mixin] : {},
+        data: function() {
+            return {
+                wap: wapFn(), //移动端判断参数
+                minH: 100,
+                blockH: 100, //查询证书页面用的的最小高度
+            }
+        },
+        mounted: function() {
+            var _this = this;
+            this.$nextTick(function() {
+                _this.resize();
+
+            })
+            window.onresize = function() {
+                _this.resize();
+            }
+        },
+        methods: {
+            resize: function() {
+                var cH = document.documentElement.clientHeight || document.body.clientHeight;
+                this.minH = cH - 161 - 90; //header、footer、margin
+                this.blockH = cH - 161 - 90 - 100 - 80; //header、footer、padding 、margin
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

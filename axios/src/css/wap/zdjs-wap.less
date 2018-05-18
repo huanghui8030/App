@@ -1,0 +1,225 @@
+/**指导教师网**/
+html{font-size:20px}
+body{min-width:100%;}
+[v-cloak] {
+   display:none;
+
+}
+.zdjs-header{
+    height: 100px;
+    .header-content{
+        width: 100%;
+    } 
+    .logo-img{
+        height: 100px;
+        background-size: 90%;
+        background-position: center center;
+        .logo-a{
+            width: 100%;
+            height: 40px;
+            margin-top: 30px;}
+    }
+    .el-col-18 {
+        width: 100%;
+    }
+    .el-col-6{
+        width: 0;
+        display: none;
+    }
+}
+.zdjs-footer{
+    height: 90px;
+    font-size: 12px;
+    line-height: 30px;
+    padding: 30px 0;
+}
+.zdjs-nav{
+    .el-menu {
+        width:350px;
+        padding-left: 10px;
+    }
+    .el-menu--horizontal > .el-menu-item {
+        margin: 0 10px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+    }
+} 
+/*首页*/
+.el-carousel__container{
+    height: 120px; 
+    .bar{height: 120px;
+        background-size: auto 100%;}
+}
+@media all and (orientation : landscape) { 
+/*横屏时banner宽度*/
+    .el-carousel__container{
+        .bar{background-size: 100%}
+    } 
+} 
+.zdjs-blocks{
+    width: 100%;
+    padding: 20px 0;
+    h2{
+        font-size: 24px;
+    }
+    .index-list{
+        display: block;
+        height: auto!important;
+        .el-col-9,.el-col-6{
+            width: 100%;
+            margin:0 0 20px; 
+        }
+        &>.el-col{height: auto!important;}
+        .zx_enter{
+            display: none!important;
+        }
+    }
+    .list{
+        padding: 0 16px 8px;
+        background-size: 30px; 
+        h3{padding: 24px 0 20px 22px;font-size: 16px; }
+        .el-row{line-height: 26px;font-size: 16px;padding: 10px 0;}
+    }
+    .list3{
+        display:none;
+        height: 200px;
+        background:#fff url(../../images/search.png) no-repeat 0 12px;/*no*/
+        background-size: 30px;
+        .search-text{
+            margin-top:80px;
+        }
+    }
+}
+/*列表页*/
+.jycy{
+    .el-row{margin:  0 !important;}
+    .el-col-12{
+        width: 100%;
+        padding-left:0 !important; 
+        padding-right:0 !important; 
+    }
+    .list{
+        margin-bottom: 20px; 
+        height:auto;
+        .el-col-17 {
+             width: 70%; 
+        }
+        .el-col-7 {
+            width: 30%;
+        }
+    }
+     .list1{
+        height:auto;
+     }
+}
+/*详情页*/
+.gzdt{
+    .list{min-height:200px;
+        .el-col-17 {
+             width: 70%; 
+        }
+        .el-col-7 {
+            width: 30%;
+        }
+    }
+    .nav{padding: 24px 0 8px 16px;}
+    .article{
+        p{font-size: 16px;}
+    }
+    h2 {font-size: 24px;}
+    .news_time{font-size: 12px;padding: 15px 0 24px;}
+    .el-pagination{
+        float:none;
+        overflow-x: scroll;
+    }
+}
+/*证书查询和结果页面*/
+/*查询页面*/
+.s-page{
+    h2{ font-size: 24px; margin-bottom: 24px;}
+    .el-row{margin-left: 0!important;margin-right: 0!important;}
+    .el-col-9{
+        width: 37.5%;
+        margin-bottom:0;
+    }
+    .s-from{width: 300px;}
+    .el-form-item__label{display: none}
+    background-size:40px;
+}
+/*无结果页面*/
+.s-result{
+    .el-col-4{
+        width: 50%
+    }
+    .el-col-14{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .el-col-13 {
+        width: 50%;
+        margin-left: 25%;
+        text-align: center;
+    }
+    &.s-page {
+        .no-result {
+            margin:40px 0 20px;
+        }
+        .btn{
+            margin-top:0;
+        }
+    }
+}
+/*有结果页面*/
+.wap-result{
+    .el-col-offset-9{margin-left: 10%}
+    .el-col-2 {width: 30%;}
+    .el-col-5 { width: 50%;}
+    .btn{
+        .el-col-offset-9,.el-col-2{margin-left: 0;width: 0}
+        .el-col-5 { width: 100%;text-align: center;}
+    }
+}
+//弹出框
+.el-message-box{width:90%}
+//btn
+.el-button{    
+    padding: 12px 20px;
+    font-size: 14px;}
+.el-input__inner{    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;}
+.el-form-item{margin-bottom: 30px;}
+//图片验证码
+#c-captcha-txt-ct{
+    .error-border-wap{
+        border: 1px solid #FF6350;
+    }
+    .success-border-wap {
+        border: 1px solid #26a69a;
+    }
+    .c-captcha-txt-label{
+        display: none;
+    }
+} 
+.el-form-item__content{
+    text-align: center;
+}
+#c-captcha-img-ct-wap{
+    margin-bottom: 0;
+    #c-captcha-img{
+        float: none;
+    }
+    #c-captcha-im-ch-wap{
+        margin-top: 0;
+        line-height: 1.5;
+        float: none;
+    }
+}
+.codetip{    
+    position: absolute;
+    margin-top:0;
+    top:230px;/*no*/
+    min-width: 300px;
+    margin-left: -150px;
+    padding: 4px 15px;}

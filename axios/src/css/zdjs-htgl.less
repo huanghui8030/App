@@ -1,0 +1,323 @@
+/**
+ * 指导教师网，后台管理样式文件 20180316
+ */
+@import url('_base.less');
+
+@headerH : 80px;
+@headerBgColor:#1b8af5;
+@headerFontColor: #fff ;
+@aColor:#409EFF; 
+@tableBorder :#cecece;
+
+@dis20:20px;
+@borderD : 1px solid #ddd;
+ 
+body{
+    min-width: 1180px;
+};
+
+//header
+.el-header{
+    height: @headerH;    
+    line-height: @headerH;
+    background-color: @headerBgColor;
+    .header-logo{
+        font-size: 26px;
+        color: @headerFontColor;
+        float: left;
+        width: 427px;
+        height: 25px;
+        margin-top: 28px;
+        background-image: url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo.png");
+        background-image: -webkit-image-set(url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo.png") 1x,
+            url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo-2x.png") 2x);
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        overflow: hidden;
+    }
+    .el-menu{
+        background-color: @headerBgColor;
+        height: @headerH;
+        line-height: @headerH;
+        border-bottom: 0;
+        .el-menu-item {
+            height: @headerH;
+            line-height: @headerH;
+            &:hover{
+                background-color: @headerBgColor;
+
+            }
+            a{
+                height: @headerH - 8;
+                line-height: @headerH - 8;
+                color: #fafeff;
+                font-size: 16px;
+                border-bottom: 4px solid @headerBgColor; 
+                display: inline-block;
+                &:hover{
+                    text-decoration:none;
+                    color: darken(@headerFontColor,10%);
+                }
+            } 
+        }
+        .is-active{
+            border-bottom: 0;
+            a{
+                border-bottom: 4px solid #bae0f5; 
+                &:hover{
+                    color: @headerFontColor;
+                }  
+            }
+        }
+    }
+    .header-right{
+        text-align:right;    
+        a{
+            display: inline-block;
+            text-decoration:none;
+            color: @headerFontColor;  
+            vertical-align: top;
+            &:hover{
+                color: darken(@headerFontColor,10%);
+            }
+            &:nth-child(2){
+                width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        .iconfont{
+            text-decoration:none;
+            font-size:18px;
+            color: @headerFontColor;  
+            margin-left: 20px;
+            line-height: 1.2;
+            cursor: pointer;
+            &:hover{
+                color: darken(@headerFontColor,10%);
+            }
+        }
+    }
+    .el-menu--horizontal>.el-menu-item.is-active{
+        color:@headerBgColor;
+    }
+} 
+
+//footer
+.el-footer{
+    padding-top:@dis20;
+}
+.layout-content{
+    margin:@dis20;
+    min-height: 500px;
+}
+//搜索区域
+.search-blocks{
+    .right-btn{
+        text-align: right;
+    }
+}
+.el-button {
+    .iconfont{
+        margin-right: 4px;
+        vertical-align: -2px;
+        font-size:18px;
+    }
+}
+//表格
+.el-table {
+    border-color: @tableBorder;
+    &::before,&::after{
+        background-color : @tableBorder;
+    }
+    thead{
+        color: #333;
+    }
+    th{ 
+        border-right : 0px;
+        background-color : #f1f1f1;
+        border-bottom-color: @tableBorder;
+        padding: 6px 0;
+    }
+    th.is-leaf{
+        border-bottom-color: @tableBorder;
+    }
+    td{
+        border-right : 0px;
+        padding: 2px 0;
+        border-bottom-color: @tableBorder;
+    }
+    .el-table__empty-block{
+        height:100px;
+    }
+    .cell{
+        line-height:28px;
+        a{
+            color: @aColor;
+        }
+    }
+    i[class^=el-icon-] {
+        font-size:24px;
+        cursor: pointer;
+        margin: 8px 4px;
+        &:hover{
+            color:@aColor;
+        }
+    }
+}
+
+.el-form-item__content .edui-default{
+    line-height: 20px;
+}
+//分页
+.el-pagination{
+    margin:@dis20;
+    text-align: right;
+}
+.btn-center{
+    text-align:center;
+}
+//验证表单
+.rule-form{
+    width: 1000px;
+    margin: 0 auto;
+    h2{
+        text-align: center;
+        margin-bottom: @dis20;
+    }
+    .el-date-editor.el-input{
+        width:100%;
+    }
+    .el-select{
+        display:block;
+    }
+}
+
+//详细
+.detail-form{
+    width: 1180px;
+    margin: 0 auto;
+    padding: 0 64px 20px;
+    h2{
+        font-size: 24px;
+        text-align: center;
+        color: #003570;
+        word-wrap: break-word;
+    }
+    .detail-subhead{
+        color: #999;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px 0 24px;
+    }
+    .detail-content{
+        min-height:400px;
+        word-wrap: break-word;
+        p{
+            /*text-indent: 2em;*/
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+            word-wrap: break-word;
+        }
+        img{
+            max-width: 100%;
+        }
+        table{
+            margin: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-left:@borderD;
+            border-top:@borderD;
+            td{
+                border-right:@borderD;
+                border-bottom:@borderD;
+                line-height: 1.8;
+                padding: 6px 10px;
+                vertical-align: text-top;
+            }
+        }
+    }
+}
+
+//上传培训证书中提示框样式。
+.info-tips{
+    color: #666;
+    width: 100%;
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    h3{ 
+        font-size: 16px;
+        line-height: 30px;
+        font-weight:500;
+        margin-bottom: 10px;
+    } 
+    
+    table{
+        margin: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-bottom: @borderD;
+        border-right: @borderD;
+        th,td{
+            border-top: @borderD;
+            border-left: @borderD;
+            line-height: 1.8;
+            padding: 6px 10px;
+            vertical-align: text-top;
+        }
+        
+        .td-required:before{
+            content: '*';
+            color: #f56c6c;
+        }
+        .td-center{
+            text-align:center;
+        }
+    }
+
+    thead th{
+        text-align: center;
+        background: #efefef;
+        font-weight: bold;
+    }
+    tbody th{
+        color:#666;
+        font-weight:500;
+        &:before{
+            content: ' ';
+            margin-right: 4px;
+            display: inline-block;
+            width: 8px;
+        }
+    }
+}
+.el-progress{line-height:2.8}
+.a-blue, .a-blue:link, .a-blue:visited{
+    color:@aColor;
+}
+//附件上传
+.upload-form{
+    margin: 0 auto;
+    width: 680px;
+    .el-alert--warning{
+        background-color: #fef0f0;
+        color: #f56c6c
+    }
+}
+//ie9提示文字换行 
+.el-message{
+    .el-message__content{
+        display: inline-block;
+    }
+} 
+.el-alert{
+    .el-alert__content{
+        display: inline-block;
+    }
+}
+.el-progress-bar__inner{
+    background-color:#67c23a; 
+}

@@ -1,0 +1,345 @@
+/**指导教师网**/
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  min-width: 100%;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.zdjs-header {
+  height: 5rem;
+}
+
+.zdjs-header .header-content {
+  width: 100%;
+}
+
+.zdjs-header .logo-img {
+  height: 5rem;
+  -webkit-background-size: 90% 90%;
+  background-size: 90%;
+  background-position: center center;
+}
+
+.zdjs-header .logo-img .logo-a {
+  width: 100%;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+
+.zdjs-header .el-col-18 {
+  width: 100%;
+}
+
+.zdjs-header .el-col-6 {
+  width: 0;
+  display: none;
+}
+
+.zdjs-footer {
+  height: 4.5rem;
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.zdjs-nav .el-menu {
+  width: 17.5rem;
+  padding-left: 0.5rem;
+}
+
+.zdjs-nav .el-menu--horizontal > .el-menu-item {
+  margin: 0 0.5rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.8rem;
+}
+
+/*首页*/
+
+.el-carousel__container {
+  height: 6rem;
+}
+
+.el-carousel__container .bar {
+  height: 6rem;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+}
+
+@media all and (orientation: landscape) {
+  /*横屏时banner宽度*/
+
+  .el-carousel__container .bar {
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+  }
+}
+
+.zdjs-blocks {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.zdjs-blocks h2 {
+  font-size: 1.2rem;
+}
+
+.zdjs-blocks .index-list {
+  display: block;
+  height: auto!important;
+}
+
+.zdjs-blocks .index-list .el-col-9,
+.zdjs-blocks .index-list .el-col-6 {
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.zdjs-blocks .index-list > .el-col {
+  height: auto!important;
+}
+
+.zdjs-blocks .index-list .zx_enter {
+  display: none!important;
+}
+
+.zdjs-blocks .list {
+  padding: 0 0.8rem 0.4rem;
+  -webkit-background-size: 1.5rem 1.5rem;
+  background-size: 1.5rem;
+}
+
+.zdjs-blocks .list h3 {
+  padding: 1.2rem 0 1rem 1.1rem;
+  font-size: 0.8rem;
+}
+
+.zdjs-blocks .list .el-row {
+  line-height: 1.3rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.zdjs-blocks .list3 {
+  display: none;
+  height: 10rem;
+  background: #fff url("../../images/search.png?v=1526636093993") no-repeat 0 12px;
+  -webkit-background-size: 1.5rem 1.5rem;
+  background-size: 1.5rem;
+}
+
+.zdjs-blocks .list3 .search-text {
+  margin-top: 4rem;
+}
+
+/*列表页*/
+
+.jycy .el-row {
+  margin: 0 !important;
+}
+
+.jycy .el-col-12 {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.jycy .list {
+  margin-bottom: 1rem;
+  height: auto;
+}
+
+.jycy .list .el-col-17 {
+  width: 70%;
+}
+
+.jycy .list .el-col-7 {
+  width: 30%;
+}
+
+.jycy .list1 {
+  height: auto;
+}
+
+/*详情页*/
+
+.gzdt .list {
+  min-height: 10rem;
+}
+
+.gzdt .list .el-col-17 {
+  width: 70%;
+}
+
+.gzdt .list .el-col-7 {
+  width: 30%;
+}
+
+.gzdt .nav {
+  padding: 1.2rem 0 0.4rem 0.8rem;
+}
+
+.gzdt .article p {
+  font-size: 0.8rem;
+}
+
+.gzdt h2 {
+  font-size: 1.2rem;
+}
+
+.gzdt .news_time {
+  font-size: 0.6rem;
+  padding: 0.75rem 0 1.2rem;
+}
+
+.gzdt .el-pagination {
+  float: none;
+  overflow-x: scroll;
+}
+
+/*证书查询和结果页面*/
+
+/*查询页面*/
+
+.s-page {
+  -webkit-background-size: 2rem 2rem;
+  background-size: 2rem;
+}
+
+.s-page h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.s-page .el-row {
+  margin-left: 0!important;
+  margin-right: 0!important;
+}
+
+.s-page .el-col-9 {
+  width: 37.5%;
+  margin-bottom: 0;
+}
+
+.s-page .s-from {
+  width: 15rem;
+}
+
+.s-page .el-form-item__label {
+  display: none;
+}
+
+/*无结果页面*/
+
+.s-result .el-col-4 {
+  width: 50%;
+}
+
+.s-result .el-col-14 {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.s-result .el-col-13 {
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.s-result.s-page .no-result {
+  margin: 2rem 0 1rem;
+}
+
+.s-result.s-page .btn {
+  margin-top: 0;
+}
+
+/*有结果页面*/
+
+.wap-result .el-col-offset-9 {
+  margin-left: 10%;
+}
+
+.wap-result .el-col-2 {
+  width: 30%;
+}
+
+.wap-result .el-col-5 {
+  width: 50%;
+}
+
+.wap-result .btn .el-col-offset-9,
+.wap-result .btn .el-col-2 {
+  margin-left: 0;
+  width: 0;
+}
+
+.wap-result .btn .el-col-5 {
+  width: 100%;
+  text-align: center;
+}
+
+.el-message-box {
+  width: 90%;
+}
+
+.el-button {
+  padding: 0.6rem 1rem;
+  font-size: 0.7rem;
+}
+
+.el-input__inner {
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 0.75rem;
+}
+
+.el-form-item {
+  margin-bottom: 1.5rem;
+}
+
+#c-captcha-txt-ct .error-border-wap {
+  border: 0.05rem solid #FF6350;
+}
+
+#c-captcha-txt-ct .success-border-wap {
+  border: 0.05rem solid #26a69a;
+}
+
+#c-captcha-txt-ct .c-captcha-txt-label {
+  display: none;
+}
+
+.el-form-item__content {
+  text-align: center;
+}
+
+#c-captcha-img-ct-wap {
+  margin-bottom: 0;
+}
+
+#c-captcha-img-ct-wap #c-captcha-img {
+  float: none;
+}
+
+#c-captcha-img-ct-wap #c-captcha-im-ch-wap {
+  margin-top: 0;
+  line-height: 1.5;
+  float: none;
+}
+
+.codetip {
+  position: absolute;
+  margin-top: 0;
+  top: 230px;
+  min-width: 15rem;
+  margin-left: -7.5rem;
+  padding: 0.2rem 0.75rem;
+}

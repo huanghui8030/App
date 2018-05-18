@@ -1,0 +1,411 @@
+/**
+ * 指导教师网，后台管理样式文件 20180316
+ */
+/* 初始化CSS */
+body,
+p,
+ul,
+ol,
+li,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+select,
+input {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+  color: #333333;
+  text-align: left;
+  font: 14px/1.5 tahoma, arial, 'Microsoft YaHei', "Hiragino Sans GB", SimSun, sans-serif;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+select,
+input {
+  vertical-align: middle;
+  font-size: 14px;
+  font-family: Tahoma, Helvetica, Arial, 'Microsoft YaHei', SimSun, sans-serif;
+}
+img {
+  border: 0;
+}
+a,
+a:link,
+a:visited {
+  color: #333333;
+  text-decoration: none;
+}
+a:hover {
+  color: #BB3543;
+  text-decoration: underline;
+}
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearFloat {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+}
+input {
+  border: none;
+  outline: medium;
+}
+.el-header h1 {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  margin-top: -30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+}
+/*footer*/
+.el-footer {
+  background: #40423e;
+  color: #d2d7d3;
+  text-align: center;
+}
+.el-footer a {
+  color: #d2d7d3;
+}
+.el-form-item {
+  margin-bottom: 30px;
+}
+/**ie兼容**/
+.el-input.el-pagination__editor .el-input__inner,
+.el-pagination .el-select .el-input .el-input__inner {
+  line-height: 28px;
+}
+[v-cloak] {
+  display: none;
+}
+/*提示信息样式**/
+.el-message {
+  top: 200px;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+       -o-transform: translateX(0);
+          transform: translateX(0);
+  /*ie9不兼容，提示框不居中*/
+  margin-left: -170px;
+  /*ie9不兼容，提示框不居中*/
+}
+.el-message-box__message .title {
+  color: #003570;
+  font-weight: bold;
+  padding: 0 6px;
+}
+.el-message-box__message p {
+  text-indent: 0;
+}
+body {
+  min-width: 1180px;
+}
+.el-header {
+  height: 80px;
+  line-height: 80px;
+  background-color: #1b8af5;
+}
+.el-header .header-logo {
+  font-size: 26px;
+  color: #fff;
+  float: left;
+  width: 427px;
+  height: 25px;
+  margin-top: 28px;
+  background-image: url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo.png?v=1526636093993");
+  background-image: -webkit-image-set(url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo.png?v=1526636093993") 1x, url("https://t4.chei.com.cn/passport/images/ncss_login/zdjs-logo-2x.png?v=1526636093993") 2x);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  overflow: hidden;
+}
+.el-header .el-menu {
+  background-color: #1b8af5;
+  height: 80px;
+  line-height: 80px;
+  border-bottom: 0;
+}
+.el-header .el-menu .el-menu-item {
+  height: 80px;
+  line-height: 80px;
+}
+.el-header .el-menu .el-menu-item:hover {
+  background-color: #1b8af5;
+}
+.el-header .el-menu .el-menu-item a {
+  height: 72px;
+  line-height: 72px;
+  color: #fafeff;
+  font-size: 16px;
+  border-bottom: 4px solid #1b8af5;
+  display: inline-block;
+}
+.el-header .el-menu .el-menu-item a:hover {
+  text-decoration: none;
+  color: #e6e6e6;
+}
+.el-header .el-menu .is-active {
+  border-bottom: 0;
+}
+.el-header .el-menu .is-active a {
+  border-bottom: 4px solid #bae0f5;
+}
+.el-header .el-menu .is-active a:hover {
+  color: #fff;
+}
+.el-header .header-right {
+  text-align: right;
+}
+.el-header .header-right a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  vertical-align: top;
+}
+.el-header .header-right a:hover {
+  color: #e6e6e6;
+}
+.el-header .header-right a:nth-child(2) {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.el-header .header-right .iconfont {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  margin-left: 20px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.el-header .header-right .iconfont:hover {
+  color: #e6e6e6;
+}
+.el-header .el-menu--horizontal > .el-menu-item.is-active {
+  color: #1b8af5;
+}
+.el-footer {
+  padding-top: 20px;
+}
+.layout-content {
+  margin: 20px;
+  min-height: 500px;
+}
+.search-blocks .right-btn {
+  text-align: right;
+}
+.el-button .iconfont {
+  margin-right: 4px;
+  vertical-align: -2px;
+  font-size: 18px;
+}
+.el-table {
+  border-color: #cecece;
+}
+.el-table::before,
+.el-table::after {
+  background-color: #cecece;
+}
+.el-table thead {
+  color: #333;
+}
+.el-table th {
+  border-right: 0px;
+  background-color: #f1f1f1;
+  border-bottom-color: #cecece;
+  padding: 6px 0;
+}
+.el-table th.is-leaf {
+  border-bottom-color: #cecece;
+}
+.el-table td {
+  border-right: 0px;
+  padding: 2px 0;
+  border-bottom-color: #cecece;
+}
+.el-table .el-table__empty-block {
+  height: 100px;
+}
+.el-table .cell {
+  line-height: 28px;
+}
+.el-table .cell a {
+  color: #409EFF;
+}
+.el-table i[class^=el-icon-] {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 8px 4px;
+}
+.el-table i[class^=el-icon-]:hover {
+  color: #409EFF;
+}
+.el-form-item__content .edui-default {
+  line-height: 20px;
+}
+.el-pagination {
+  margin: 20px;
+  text-align: right;
+}
+.btn-center {
+  text-align: center;
+}
+.rule-form {
+  width: 1000px;
+  margin: 0 auto;
+}
+.rule-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.rule-form .el-date-editor.el-input {
+  width: 100%;
+}
+.rule-form .el-select {
+  display: block;
+}
+.detail-form {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 0 64px 20px;
+}
+.detail-form h2 {
+  font-size: 24px;
+  text-align: center;
+  color: #003570;
+  word-wrap: break-word;
+}
+.detail-form .detail-subhead {
+  color: #999;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px 0 24px;
+}
+.detail-form .detail-content {
+  min-height: 400px;
+  word-wrap: break-word;
+}
+.detail-form .detail-content p {
+  /*text-indent: 2em;*/
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  word-wrap: break-word;
+}
+.detail-form .detail-content img {
+  max-width: 100%;
+}
+.detail-form .detail-content table {
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.detail-form .detail-content table td {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.8;
+  padding: 6px 10px;
+  vertical-align: text-top;
+}
+.info-tips {
+  color: #666;
+  width: 100%;
+  padding: 10px 20px 20px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+.info-tips h3 {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.info-tips table {
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.info-tips table th,
+.info-tips table td {
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  line-height: 1.8;
+  padding: 6px 10px;
+  vertical-align: text-top;
+}
+.info-tips table .td-required:before {
+  content: '*';
+  color: #f56c6c;
+}
+.info-tips table .td-center {
+  text-align: center;
+}
+.info-tips thead th {
+  text-align: center;
+  background: #efefef;
+  font-weight: bold;
+}
+.info-tips tbody th {
+  color: #666;
+  font-weight: 500;
+}
+.info-tips tbody th:before {
+  content: ' ';
+  margin-right: 4px;
+  display: inline-block;
+  width: 8px;
+}
+.el-progress {
+  line-height: 2.8;
+}
+.a-blue,
+.a-blue:link,
+.a-blue:visited {
+  color: #409EFF;
+}
+.upload-form {
+  margin: 0 auto;
+  width: 680px;
+}
+.upload-form .el-alert--warning {
+  background-color: #fef0f0;
+  color: #f56c6c;
+}
+.el-message .el-message__content {
+  display: inline-block;
+}
+.el-alert .el-alert__content {
+  display: inline-block;
+}
+.el-progress-bar__inner {
+  background-color: #67c23a;
+}
