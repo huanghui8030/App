@@ -27,7 +27,15 @@
       <transition name='trans' mode='out-in'>
         <div :is='currView'></div>
       </transition>
-      <button @click='toggleCom'>点击</button>
+      <button @click='toggleCom'>css控制动画过渡</button>
+    </div>
+    <div>
+      <transition @before-enter='beforeEnter'
+        @enter='enter' @leave='leave'
+        :css='false'>
+        <div class='animate-p' v-show='show'>Demo</div>
+      </transition>
+      <button @click='show=!show'>js控制动画过渡</button>
     </div>
   </div>
 </template>
@@ -51,6 +59,7 @@ export default {
   name: 'App',
   data(){
     return {
+      show:true,
       currView:'com-b',
       link:'/',
       title:'首页标题',
@@ -99,6 +108,30 @@ export default {
     },
     getMyEvent(hello){
       console.log('父页面内容！',hello);
+    },
+    beforeEnter:function(el){
+      $(el).css({
+        left:'-500px',
+        opacity:0
+      });
+    },
+    enter:function(el,done){
+      $(el).animate({
+        left:0,
+        opacity:1
+      },{
+        duration:1500,
+        complete:done
+      });
+    },
+    leave:function(el,done){
+      $(el).animate({
+        left:'500px',
+        opacity:0
+      },{
+        duration:1500,
+        complete:done
+      });
     }
   }
 }
@@ -123,5 +156,10 @@ export default {
 .trans-leave-active{
     transform: translateY(500px);
     opacity: 0;
+}
+.animate-p{
+  position: absolute;
+  bottom:0;
+  left:0;
 }
 </style>
