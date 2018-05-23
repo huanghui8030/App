@@ -4,3 +4,5 @@ iview/node_modules/*
 
 
 mintui/_ui/node_modules/*
+node_modules/*
+/node_modules/*
